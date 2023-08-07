@@ -33,7 +33,7 @@ MonoBehaviour:
   m_EnableLODCrossFade: 1
   m_LODCrossFadeDitheringType: 1
   m_ShEvalMode: 0
-  m_LightProbeSystem: 0
+  m_LightProbeSystem: 1
   m_ProbeVolumeMemoryBudget: 1024
   m_ProbeVolumeBlendingMemoryBudget: 128
   m_SupportProbeVolumeStreaming: 0
@@ -91,7 +91,9 @@ MonoBehaviour:
   apvScenesData:
     m_ObsoleteSerializedBakingSets: []
     serializedBounds: []
-    serializedHasVolumes: []
+    serializedHasVolumes:
+    - sceneGUID: 66cf7f4702599924288434a151defe22
+      hasProbeVolumes: 0
     bakingSets: []
     m_LightingScenario: Default
   m_PrefilteringModeMainLightShadows: 1
