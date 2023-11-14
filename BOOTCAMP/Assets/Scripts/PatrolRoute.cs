@@ -5,44 +5,45 @@ using UnityEngine;
 
 public class PatrolRoute : MonoBehaviour
 {
-    [SerializeField] private Color patrolRouteColor;
-    [SerializeField] private PatrolType patrolType;
-    [SerializeField] private List<Transform> route = new List<Transform>();
+    [SerializeField] private Color _patrolRouteColor;
+    [SerializeField] private PatrolType _patrolType;
+    [SerializeField] private List<Transform> _route = new List<Transform>();
 
 
-    public List<Transform> Route => route;
+    public List<Transform> Route => _route;
+    public PatrolType Patrol => _patrolType;
 
     [Button]
     private void AddPatrolPoint()
     {
         GameObject point = new GameObject();
         point.transform.parent = transform;
-        point.transform.position = route[route.Count - 1] != null ? route[route.Count - 1].position : Vector3.zero;
-        point.name = "Point" + (route.Count + 1);
-        route.Add(point.transform);
+        point.transform.position = _route != null && _route.Count > 0 ? _route[_route.Count - 1].position : transform.position;
+        point.name = "Point" + (_route.Count + 1);
+        _route.Add(point.transform);
 
 #if UNITY_EDITOR
         Undo.RegisterCreatedObjectUndo(point, "Add Patrol Point");
 #endif
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
 #if UNITY_EDITOR
-        Handles.color = patrolRouteColor;
+        Handles.color = _patrolRouteColor;
         Handles.Label(transform.position, gameObject.name);
 
 #endif
 
-        Gizmos.color = patrolRouteColor;
+        Gizmos.color = _patrolRouteColor;
 
-        if (patrolType == PatrolType.Loop && route.Count > 2)
+        if (_patrolType == PatrolType.Loop && _route.Count > 2)
         {
-            Gizmos.DrawLine(route[0].position, route[route.Count - 1].position);
+            Gizmos.DrawLine(_route[0].position, _route[_route.Count - 1].position);
         }
-        for (int i = 1; i < route.Count; i++)
+        for (int i = 1; i < _route.Count; i++)
         {
-            Gizmos.DrawLine(route[i].position, route[i - 1].position);
+            Gizmos.DrawLine(_route[i].position, _route[i - 1].position);
         }    
     }
 

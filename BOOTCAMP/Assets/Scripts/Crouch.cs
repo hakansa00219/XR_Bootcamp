@@ -18,7 +18,6 @@ public class Crouch : MonoBehaviour
 
     private void OnCrouch()
     {
-
         if(_crouched)
         {
             _crouched = false;
