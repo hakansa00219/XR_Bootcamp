@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 3781286715636922999}
   - component: {fileID: 1511434023592866668}
   - component: {fileID: 8616502010552768746}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 2063844227088583829}
   - component: {fileID: 918482504627477649}
   - component: {fileID: 656735219131209890}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DoorTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,3 +452,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e66464db947262479a22198deaf6db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _door: {fileID: 0}

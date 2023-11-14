@@ -122,6 +122,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &72860022 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400318, guid: 49f2055d53eeb4e5a92af590a44bddee,
+    type: 3}
+  m_PrefabInstance: {fileID: 1959745817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &100600088
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,6 +143,7 @@ GameObject:
   - component: {fileID: 100600091}
   - component: {fileID: 100600094}
   - component: {fileID: 100600095}
+  - component: {fileID: 100600096}
   m_Layer: 0
   m_Name: Unitychan
   m_TagString: Untagged
@@ -274,6 +281,24 @@ MonoBehaviour:
   _gizmoColor: {r: 1, g: 0, b: 0, a: 1}
   _viewRadius: 6
   _viewAngle: 30
+  _creature: {fileID: 100600096}
+  _blockedLayers:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &100600096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100600088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb244e1242b8b9498e93f08a7a86026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
+  head: {fileID: 72860022}
 --- !u!1 &113472589
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +313,7 @@ GameObject:
   - component: {fileID: 113472592}
   - component: {fileID: 113472591}
   - component: {fileID: 113472590}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stairs (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1240,13 +1265,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb244e1242b8b9498e93f08a7a86026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 0
+  head: {fileID: 2105993565}
 --- !u!43 &587760975
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30288
+  m_Name: pb_Mesh30286
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1480,7 +1507,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30134
+  m_Name: pb_Mesh30138
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1645,7 +1672,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30270
+  m_Name: pb_Mesh30272
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1818,7 +1845,7 @@ GameObject:
   - component: {fileID: 730352487}
   - component: {fileID: 730352486}
   - component: {fileID: 730352485}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3944,7 +3971,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30188
+  m_Name: pb_Mesh30194
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -4109,7 +4136,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30228
+  m_Name: pb_Mesh30230
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -4336,7 +4363,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30250
+  m_Name: pb_Mesh30252
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -4560,7 +4587,7 @@ GameObject:
   - component: {fileID: 1689158047}
   - component: {fileID: 1689158046}
   - component: {fileID: 1689158045}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Door (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5252,7 +5279,7 @@ GameObject:
   - component: {fileID: 1720395675}
   - component: {fileID: 1720395674}
   - component: {fileID: 1720395673}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PolyShape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5784,7 +5811,7 @@ GameObject:
   - component: {fileID: 1858703347}
   - component: {fileID: 1858703346}
   - component: {fileID: 1858703345}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6358,7 +6385,7 @@ GameObject:
   - component: {fileID: 1935812615}
   - component: {fileID: 1935812614}
   - component: {fileID: 1935812613}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76259,7 +76286,7 @@ GameObject:
   - component: {fileID: 2043375396}
   - component: {fileID: 2043375395}
   - component: {fileID: 2043375394}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stairs (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77051,7 +77078,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30306
+  m_Name: pb_Mesh30304
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -77216,7 +77243,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30172
+  m_Name: pb_Mesh30180
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -77574,6 +77601,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54d1cb4f09d7214ba97dfa08e431482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2105993565 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5242107653240477475, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
+    type: 3}
+  m_PrefabInstance: {fileID: 550781041}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2151602025200331493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77640,7 +77673,7 @@ PrefabInstance:
     - target: {fileID: 431421498993214400, guid: 423bb5bd7c9393e4f82ac2f4515a22d0,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 2761
+      value: 2764
       objectReference: {fileID: 0}
     - target: {fileID: 656735219131209890, guid: 423bb5bd7c9393e4f82ac2f4515a22d0,
         type: 3}
