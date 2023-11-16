@@ -4,7 +4,7 @@ public class Creature : MonoBehaviour
 {
     public enum Team
     {
-        Player, Enemy
+        Player = 0, Enemy = 1
     }
 
     public Team team;

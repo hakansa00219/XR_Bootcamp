@@ -13,7 +13,7 @@ public class FieldOfView : MonoBehaviour
     [SerializeField] private float _viewAngle = 30f;
     [SerializeField] private Creature _creature;
     [SerializeField] private LayerMask _blockedLayers;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +52,17 @@ public class FieldOfView : MonoBehaviour
                 visibleObjects.Add(target.transform);
             }
         }
+    }
+
+    public bool IsObjectSeen(out Vector3 seenObject)
+    {
+        if(visibleObjects.Count > 0)
+        {
+            seenObject = visibleObjects[0].position;
+            return true;
+        }
+        seenObject = default;
+        return false;
     }
 
     private void OnDrawGizmos()
