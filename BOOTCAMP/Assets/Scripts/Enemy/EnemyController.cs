@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class EnemyController : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private FieldOfView _fov;
     [SerializeField] private EnemyState _state = EnemyState.Patrol;
 
+    public UnityEvent<Transform> onPlayerFound;
+    public UnityEvent onInvestigate;
+    public UnityEvent onReturnToPatrol;
 
     private int _routeIndex = 0;
     private bool _increasing = true;
@@ -33,7 +37,7 @@ public class EnemyController : MonoBehaviour
     {
         if (_fov.IsObjectSeen(out Vector3 visibleObject))
         {
-            InvestigatePoint(visibleObject);
+            PlayerFound(visibleObject);
         }
         
         switch (_state)
@@ -48,6 +52,13 @@ public class EnemyController : MonoBehaviour
     }
 
     public void InvestigatePoint(Vector3 investigatePoint)
+    {
+        SetInvestigationPoint(investigatePoint);
+
+        onInvestigate?.Invoke();
+    }
+
+    private void SetInvestigationPoint(Vector3 investigatePoint)
     {
         _state = EnemyState.Investigate;
         _investigationPoint = investigatePoint;
@@ -66,10 +77,19 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private void PlayerFound(Vector3 investigatePoint)
+    {
+        SetInvestigationPoint(investigatePoint);
+
+        onPlayerFound?.Invoke(_fov.creature.head);
+    }
+
     private void ReturnToPatrol()
     {
         _state = EnemyState.Patrol;
         _waitTimer = 0;
+
+        onReturnToPatrol?.Invoke();
     }
 
     private void Patrolling()
