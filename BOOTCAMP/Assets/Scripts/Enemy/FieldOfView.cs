@@ -64,7 +64,7 @@ public class FieldOfView : MonoBehaviour
         seenObject = default;
         return false;
     }
-
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Gizmos.color = _gizmoColor;
@@ -78,4 +78,5 @@ public class FieldOfView : MonoBehaviour
         Handles.DrawLine(transform.position, transform.position + (lineA * _viewRadius));
         Handles.DrawLine(transform.position, transform.position + (lineB * _viewRadius));
     }
+#endif
 }

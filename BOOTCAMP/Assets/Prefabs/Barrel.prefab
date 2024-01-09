@@ -64,10 +64,12 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: b94d3872dfd5160418570fa472bf2a31, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -189,6 +191,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 9067142238936745184, guid: 5926e0e9cef65dc4291cf0bb03ac7fb1,
     type: 2}
   m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -286,3 +289,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323556191466f894c80c7c85e294a776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundRadius: 5
+  _impulseThreshold: 2
